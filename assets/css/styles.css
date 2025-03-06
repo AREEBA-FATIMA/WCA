@@ -19,7 +19,6 @@ body {
     align-items: center;
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* padding: 10px; */
 }
 
 .header-content {
@@ -51,7 +50,6 @@ body {
     margin-top: 10px;
 }
 
-/* Responsive Box Layout */
 .car-image,
 .car-details,
 .upcoming-cars {
@@ -61,6 +59,18 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.car-image {
+    width: 40%;
+}
+
+.car-details {
+    width: 30%;
+}
+
+.upcoming-cars {
+    width: 30%;
+}
+
 .car-image div {
     background: #f5b482;
     color: #f06f0c;
@@ -68,7 +78,6 @@ body {
 
 .car-image img {
     width: 100%;
-    max-width: 500px;
     height: auto;
     border-radius: 5px;
     transition: opacity 1s ease-in-out;
@@ -108,6 +117,10 @@ body {
     margin-top: 10px;
 }
 
+.upcoming-cars {
+    height: auto;
+}
+
 .upcoming-cars .main {
     font-size: 20px;
     font-weight: bold;
@@ -137,7 +150,6 @@ body {
     color: #f06f0c;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .header-content {
         width: 80%;
@@ -231,5 +243,107 @@ body {
 
     .price {
         font-size: 20px;
+    }
+}
+
+@media (min-width: 1920px) {
+
+    .header-content{
+        width: 63%;
+    }
+
+    .header h4 {
+        font-size: 40px;
+    }
+
+    .logo {
+        width: 170px;
+    }
+
+    .car-image {
+        width: 43%;
+    }
+
+    .car-details {
+        width: 27%;
+    }
+
+    .upcoming-cars {
+        width: 30%;
+    }
+    
+    .price {
+        font-size: 50px;
+    }
+
+    .car-details p {
+        font-size: 25px;
+    }
+
+    .car-details h3 {
+        font-size: 30px;
+    }
+
+    .upcoming-cars h3 {
+        font-size: 30px;
+    }
+
+    .upcoming-cars .main {
+        font-size: 30px;
+    }
+    .car-item p {
+        font-size: 25px;
+    }
+    .car-item img {
+        width: 250px;
+    }
+}
+
+@media (min-width: 3000px) {
+    .header-content{
+        width: 65%;
+    }
+    .header h4 {
+        font-size: 80px;
+    }
+    .logo {
+        width: 250px;
+    }
+
+    .car-image {
+        width: 43%;
+    }
+
+    .car-details {
+        width: 27%;
+    }
+
+    .upcoming-cars {
+        width: 30%;
+    }
+    
+    .price {
+        font-size: 70px;
+    }
+
+    .car-details p {
+        font-size: 48px;
+    }
+    .car-details h3 {
+        font-size: 50px;
+    }
+
+    .upcoming-cars h3 {
+        font-size: 50px;
+    }
+
+    .upcoming-cars .main {
+        font-size: 50px;
+    }
+    .car-item p {
+        font-size: 45px;
+    }
+    .car-item img {
+        width: 500px;
     }
 }
