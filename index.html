@@ -18,15 +18,56 @@
           <h4>2024 LEXUS RZ 300E |<span> SEQ# 73</span></h4>
         </div>
       </div>
+
       <div class="content">
         <div class="car-image">
-          <img
-            id="carSlideshow"
-            src="assets/images/car-1.jpg"
-            alt="Lexus RZ 300E"
-          />
+          <div class="slide-container">
+            <img
+              class="slide active"
+              src="assets/images/car-1.jpg"
+              alt="Lexus RZ 300E"
+            />
+            <img
+              class="slide"
+              src="assets/images/car-2.jpg"
+              alt="Lexus RZ 300E"
+            />
+            <img
+              class="slide"
+              src="assets/images/car-3.jpg"
+              alt="Lexus RZ 300E"
+            />
+            <img
+              class="slide"
+              src="assets/images/car-4.jpg"
+              alt="Lexus RZ 300E"
+            />
+            <img
+              class="slide"
+              src="assets/images/car-5.jpg"
+              alt="Lexus RZ 300E"
+            />
+            <img
+              class="slide"
+              src="assets/images/car-6.jpg"
+              alt="Lexus RZ 300E"
+            />
+
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+
+            <div class="dots-container">
+              <span class="dot active" onclick="goToSlide(0)"></span>
+              <span class="dot" onclick="goToSlide(1)"></span>
+              <span class="dot" onclick="goToSlide(2)"></span>
+              <span class="dot" onclick="goToSlide(3)"></span>
+              <span class="dot" onclick="goToSlide(4)"></span>
+              <span class="dot" onclick="goToSlide(5)"></span>
+            </div>
+          </div>
           <div class="price">78500 AED</div>
         </div>
+
         <div class="car-details">
           <h3>Car Description</h3>
           <p><strong>Stock Number:</strong> <span>73</span></p>
@@ -43,6 +84,7 @@
           <p><strong>Secondary Damage:</strong> <span>Rear End</span></p>
           <p><strong>Remarks:</strong> <span>Electric Car</span></p>
         </div>
+
         <div class="upcoming-cars">
           <h3 class="main">Auction History</h3>
           <h3>Upcoming Cars</h3>

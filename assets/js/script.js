@@ -1,21 +1,71 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const carSlideshow = document.getElementById("carSlideshow");
+let currentIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const totalSlides = slides.length;
+const prevButton = document.querySelector(".prev");
+const nextButton = document.querySelector(".next");
 
-    let currentImage = 1;
-    const totalImages = 9;
+let autoSlide;
 
-    function changeCarImage() {
-        carSlideshow.style.opacity = "0";
+const showSlide = (index) => {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    slide.style.opacity = "0";
+  });
 
-        setTimeout(() => {
-            currentImage++;
-            if (currentImage > totalImages) {
-                currentImage = 1;
-            }
-            carSlideshow.src = `assets/images/car-${currentImage}.jpg`;
-            carSlideshow.style.opacity = "1";
-        }, 1000);
-    }
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
 
-    setInterval(changeCarImage, 5000);
+  slides[index].classList.add("active");
+  setTimeout(() => {
+    slides[index].style.opacity = "1";
+  }, 10);
+};
+
+showSlide(currentIndex);
+
+const startAutoSlide = () => {
+  autoSlide = setInterval(() => {
+    nextSlide();
+  }, 5000);
+};
+
+const resetAutoSlide = () => {
+  clearInterval(autoSlide);
+  startAutoSlide();
+};
+
+const nextSlide = () => {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  showSlide(currentIndex);
+};
+
+const prevSlide = () => {
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+  showSlide(currentIndex);
+};
+
+prevButton.addEventListener("click", () => {
+  prevSlide();
+  resetAutoSlide();
 });
+
+nextButton.addEventListener("click", () => {
+  nextSlide();
+  resetAutoSlide();
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    goToSlide(index);
+    resetAutoSlide();
+  });
+});
+
+const goToSlide = (index) => {
+  currentIndex = index;
+  showSlide(currentIndex);
+};
+
+startAutoSlide();
